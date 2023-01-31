@@ -24,6 +24,10 @@
     <None Remove="Areas\Admin\Data\" />
     <None Remove="Areas\Admin\Views\Shared\" />
     <None Remove="Areas\Admin\Views\Category\" />
+    <None Remove="Data\Validation\" />
+    <None Remove="Data\Components\" />
+    <None Remove="Data\TagHelpers\" />
+    <None Remove="Media\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -37,6 +41,10 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Admin\Views\Category\" />
+    <Folder Include="Data\Validation\" />
+    <Folder Include="Data\Components\" />
+    <Folder Include="Data\TagHelpers\" />
+    <Folder Include="Media\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.12" />

@@ -43,6 +43,8 @@ namespace Memories.Data
         public DbSet<UserCategory> UserCategory {get;set;}
         public DbSet<Content> Content {get;set;}
 
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Family> Families { get; set; }
 
 
 
