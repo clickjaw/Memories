@@ -19,11 +19,11 @@ namespace Memories.Data
                 context.Members.AddRange(
                         new Member
                         {
-                            Name = "Pokemon Blue",
-                            Slug = "pokemon-blue",
-                            Description = "The game that started it all.",
+                            Name = "Tyler Morgan",
+                            Slug = "tyler-morgan",
+                            Description = "Son of Toby and Kim Morgan",
                             Family = morgan,
-                            Image = "pokemonblue.jpg"
+                            Image = "Headshot.jpeg"
                         },
                         new Member
                         {
@@ -31,7 +31,7 @@ namespace Memories.Data
                             Slug = "hillary-thornton",
                             Description = "Daughter of Shoaf and Amanda Thornton",
                             Family = thornton,
-                            Image = "hogwartslegacy.jpg"
+                            Image = "HillaryEpcot.jpg"
                         }
                 );
 

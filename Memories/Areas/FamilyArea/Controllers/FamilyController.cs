@@ -6,14 +6,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Memories.Infrastructure;
 using Memories.Models;
 using Memories.Data;
 
 namespace Memories.Areas.FamilyArea.Controllers
 {
-    [Area("Admin")]
-    [Authorize]
+    [Area("FamilyArea")]
+    //[Authorize]
 
 
     public class FamilyController : Controller
@@ -35,7 +34,7 @@ namespace Memories.Areas.FamilyArea.Controllers
             ViewBag.PageRange = pageSize;
             ViewBag.TotalPages = (int)Math.Ceiling((decimal)_context.Members.Count() / pageSize);
             return View(await _context.Members.OrderByDescending(p => p.Id)
-                .Include(p => p.Category)
+                .Include(p => p.Family)
                 .Skip((p - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync());
@@ -46,7 +45,7 @@ namespace Memories.Areas.FamilyArea.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.Categories = new SelectList(_context.Families, "Id", "Name");
+            ViewBag.Families = new SelectList(_context.Families, "Id", "Name");
 
             return View();
         }
@@ -55,7 +54,7 @@ namespace Memories.Areas.FamilyArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Member member)
         {
-            ViewBag.Categories = new SelectList(_context.Families, "Id", "Name", member.CategoryId);
+            ViewBag.Families = new SelectList(_context.Families, "Id", "Name", member.CategoryId);
 
             if (ModelState.IsValid)
             {
@@ -73,7 +72,7 @@ namespace Memories.Areas.FamilyArea.Controllers
 
                 if (member.ImageUpload != null)
                 {
-                    string uploadsDir = Path.Combine(_webHostEnvironment.WebRootPath, "Media/Products");
+                    string uploadsDir = Path.Combine(_webHostEnvironment.WebRootPath, "Media/Members");
                     imageName = Guid.NewGuid().ToString() + " " + member.ImageUpload.FileName;
 
                     string filePath = Path.Combine(uploadsDir, imageName);

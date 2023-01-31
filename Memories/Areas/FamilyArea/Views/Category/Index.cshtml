@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Memories.Entities.Category>
+﻿@model IEnumerable<Memories.Models.Member>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,22 +6,22 @@
 
 <h1>Index</h1>
 
-<p>
+@*<p>
     <partial name="_CreateButtonPartial" model="0" />
-</p>
+</p>*@
 
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImagePath)
+                @Html.DisplayNameFor(model => model.Image)
             </th>
             <th></th>
         </tr>
@@ -31,13 +31,13 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                    @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ImagePath)
+                    @Html.DisplayFor(modelItem => item.Image)
                 </td>
 
                 @*<td>
