@@ -27,7 +27,6 @@
     <None Remove="Data\Validation\" />
     <None Remove="Data\Components\" />
     <None Remove="Data\TagHelpers\" />
-    <None Remove="Media\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -44,7 +43,8 @@
     <Folder Include="Data\Validation\" />
     <Folder Include="Data\Components\" />
     <Folder Include="Data\TagHelpers\" />
-    <Folder Include="Media\" />
+    <Folder Include="wwwroot\Media\" />
+    <Folder Include="wwwroot\Media\Members\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.12" />
@@ -56,5 +56,19 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.12" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Media\" />
+    <Content Remove="wwwroot\Media\Members\" />
+    <Content Remove="wwwroot\Media\Members\headshot.jpeg" />
+    <Content Remove="wwwroot\Media\Members\HillaryEpcot.jpg" />
+    <Content Remove="wwwroot\Media\Members\HillaryWaylonBotanicGardens.jpg" />
+    <Content Remove="wwwroot\Media\Members\TylerWaylonZoo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Media\Members\headshot.jpeg" />
+    <None Include="wwwroot\Media\Members\HillaryEpcot.jpg" />
+    <None Include="wwwroot\Media\Members\HillaryWaylonBotanicGardens.jpg" />
+    <None Include="wwwroot\Media\Members\TylerWaylonZoo.jpg" />
   </ItemGroup>
 </Project>
