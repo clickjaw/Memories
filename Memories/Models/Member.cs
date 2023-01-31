@@ -14,9 +14,9 @@ namespace Memories.Models
         [Required(ErrorMessage = "Who is in the picture")]
         public string Name { get; set; }
 
-        public string Name1 { get; set; }
-        public string Name2 { get; set; }
-        public string Name3 { get; set; }
+        //public string? Name1 { get; set; }
+        //public string? Name2 { get; set; }
+        //public string? Name3 { get; set; }
 
         public string Slug { get; set; }
 

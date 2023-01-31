@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Memories.Data;
 using Memories.Entities;
+using Memories.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Memories.Areas.Admin.Controllers
 {
@@ -16,6 +18,7 @@ namespace Memories.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _context;
+
 
         public CategoryController(ApplicationDbContext context)
         {
@@ -60,13 +63,11 @@ namespace Memories.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Description, ImagePath")] Category category)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(category);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(category);
+
+            _context.Add(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Admin/Category/Edit/5
@@ -90,7 +91,7 @@ namespace Memories.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,ImagePath")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,ImageUpload")] Category category)
         {
             if (id != category.Id)
             {

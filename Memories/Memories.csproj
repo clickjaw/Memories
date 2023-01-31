@@ -27,8 +27,12 @@
     <None Remove="Data\Validation\" />
     <None Remove="Data\Components\" />
     <None Remove="Data\TagHelpers\" />
-    <None Remove="Areas\FamilyArea\Models\" />
     <None Remove="Views\Members\" />
+    <None Remove="Areas\Admin\Views\Family\" />
+    <None Remove="Areas\Identity\" />
+    <None Remove="Areas\Identity\Pages\" />
+    <None Remove="Areas\Identity\Pages\Account\" />
+    <None Remove="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -47,8 +51,12 @@
     <Folder Include="Data\TagHelpers\" />
     <Folder Include="wwwroot\Media\" />
     <Folder Include="wwwroot\Media\Members\" />
-    <Folder Include="Areas\FamilyArea\Models\" />
     <Folder Include="Views\Members\" />
+    <Folder Include="Areas\Admin\Views\Family\" />
+    <Folder Include="Areas\Identity\" />
+    <Folder Include="Areas\Identity\Pages\" />
+    <Folder Include="Areas\Identity\Pages\Account\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.12" />

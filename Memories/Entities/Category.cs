@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Memories.Data.Validation;
 
 namespace Memories.Entities
 {
@@ -16,6 +17,12 @@ namespace Memories.Entities
 
 		[Required]
 		public string ImagePath { get; set; }
+
+		//public string Image { get; set; } = "noimage.png";
+
+		//[NotMapped]
+		//[FileExtension]
+		//public IFormFile ImageUpload { get; set; }
 
 		[ForeignKey("CategoryId")]
 		public virtual ICollection<CategoryItem> CategoryItems { get; set; }

@@ -9,8 +9,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
           options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
-builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    //.AddDefaultUI()
+    .AddDefaultTokenProviders();
+//.AddRoles<IdentityRole>();
     
 
 // Add services to the container.
@@ -34,9 +37,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "Areas",
+    name: "Admin",
     pattern: "{area:exists}/{controller=Category}/{action=Index}/{id?}");
-    
 
 app.MapControllerRoute(
     name: "default",
